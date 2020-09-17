@@ -20,7 +20,11 @@ public class CommandDemoApplication implements ApplicationRunner {
 
 
     public static void main(String[] args) {
-        SpringApplication.run(CommandDemoApplication.class, args);
+        //Customizing SpringApplication disable command args
+        SpringApplication app = new SpringApplication(CommandDemoApplication.class);
+        app.setAddCommandLineProperties(false);
+        app.run(args);
+        //SpringApplication.run(CommandDemoApplication.class, args);
     }
 
 
